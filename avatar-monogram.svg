@@ -1,0 +1,10 @@
+<svg width="672" height="672" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skgHero" x1="0" y1="0" x2="34" y2="34" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8b7bff"></stop>
+      <stop offset="1" stop-color="#56d4dd"></stop>
+    </linearGradient>
+  </defs>
+  <rect x="0.6" y="0.6" width="32.8" height="32.8" rx="9" fill="#10131c" stroke="url(#skgHero)" stroke-width="0.9"></rect>
+  <path d="M20.5 10.5 H13.3 a2.6 2.6 0 0 0 0 5.2 h4.2 a2.6 2.6 0 0 1 0 5.2 h-4.8 M20.5 23.5 h-6.9" stroke="url(#skgHero)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+</svg>
