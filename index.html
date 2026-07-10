@@ -5,6 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Salma Khater — Senior Full Stack Developer</title>
 
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="apple-touch-icon" href="logo.svg">
+
+<meta name="description" content="Salma Khater — Senior Full Stack Developer. Laravel, Node.js and modern frontends, serving 100K+ users.">
+<meta property="og:title" content="Salma Khater — Senior Full Stack Developer">
+<meta property="og:description" content="I architect scalable backends and ship production web apps — 6 years across Laravel, Node.js and modern frontends, serving 100K+ users.">
+<meta property="og:image" content="logo.svg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="logo.svg">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -49,10 +60,8 @@
     padding: 22px 0;
   }
   .brand { display: flex; align-items: center; gap: 10px; }
-  .brand-dot {
-    width: 26px; height: 26px; border-radius: 7px;
-    background: linear-gradient(135deg, #8b7bff, #56d4dd);
-    display: block;
+  .brand-logo {
+    width: 26px; height: 26px; display: block;
   }
   .brand-name { font-weight: 700; font-size: 16px; color: #eef1f8; }
   .nav-links { display: flex; gap: 30px; font-size: 14px; }
@@ -61,7 +70,9 @@
   .hire-btn {
     font-size: 13px; font-weight: 600; color: #0a0b10;
     background: #c9c3ff; padding: 10px 18px; border-radius: 8px;
+    transition: background .2s;
   }
+  .hire-btn:hover { color: #0a0b10; background: #a99bff; }
 
   /* Hero */
   .hero {
@@ -107,15 +118,27 @@
     position: relative; border-radius: 18px; overflow: hidden;
     border: 1px solid #262b3a; box-shadow: 0 0 60px rgba(139,123,255,.25);
   }
-  .headshot-placeholder {
-    height: 340px; color: #1c2030;
-    display: flex; align-items: center; justify-content: center;
-    background-image: repeating-linear-gradient(135deg, currentColor 0 1px, transparent 1px 9px);
+  .monogram-card {
+    height: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(ellipse at 30% 20%, rgba(139,123,255,.18), transparent 60%),
+                linear-gradient(150deg, #12101f, #0e111a 60%);
+    position: relative;
+    overflow: hidden;
   }
-  .headshot-placeholder span {
-    font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #7d8395;
-    background: #10131c; padding: 6px 12px;
-    border: 1px dashed #2a2f3e; border-radius: 6px;
+  .monogram-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(135deg, rgba(139,123,255,.06) 0 1px, transparent 1px 24px);
+  }
+  .monogram-card img {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    z-index: 1;
   }
 
   .stats { display: flex; gap: 10px; margin-top: 14px; }
@@ -209,7 +232,9 @@
   .contact-email {
     font-size: 14px; font-weight: 600; color: #0a0b10;
     background: #c9c3ff; padding: 13px 24px; border-radius: 10px;
+    transition: background .2s;
   }
+  .contact-email:hover { color: #0a0b10; background: #a99bff; }
 
   @media (max-width: 900px) {
     .hero { grid-template-columns: 1fr; }
@@ -228,7 +253,7 @@
   <!-- Nav -->
   <nav>
     <div class="brand">
-      <span class="brand-dot"></span>
+      <img src="logo.svg" alt="Salma Khater logo" class="brand-logo">
       <span class="brand-name">Salma Khater</span>
     </div>
     <div class="nav-links">
@@ -253,12 +278,12 @@
     </div>
     <div>
       <div class="headshot-card">
-        <div class="headshot-placeholder"><span>headshot.png</span></div>
+        <div class="monogram-card"><img src="avatar-monogram.svg" alt="Salma Khater monogram"></div>
       </div>
       <div class="stats">
         <div class="stat"><div class="stat-num">6+</div><div class="stat-label">YRS</div></div>
         <div class="stat"><div class="stat-num">100K</div><div class="stat-label">USERS</div></div>
-        <div class="stat"><div class="stat-num">8</div><div class="stat-label">APPS</div></div>
+        <div class="stat"><div class="stat-num">10+</div><div class="stat-label">PROJECTS</div></div>
       </div>
     </div>
   </section>
@@ -299,24 +324,54 @@
     <div class="section-label">// selected work</div>
     <div class="projects-grid">
 
+      <a href="https://ptmanagementsystem-production.up.railway.app/login" target="_blank" class="project-card">
+        <div class="project-top">
+          <span class="logo-chip-white"><img src="pentra.svg" alt="Pentra"></span>
+          <span class="project-year">2025 ↗</span>
+        </div>
+        <div class="project-name">Pentra</div>
+        <div class="project-desc">Pentest operations platform for tracking projects, assets, and vulnerabilities, with Jira and Writeups API integrations for automated reporting.</div>
+        <div class="project-tech">Full Stack · Security Ops</div>
+      </a>
+
       <a href="https://soilspaces.com/" target="_blank" class="project-card">
         <div class="project-top">
           <span class="logo-chip-light"><img src="soilspaces.svg" alt="SoilSpaces"></span>
-          <span class="project-year">2024 ↗</span>
+          <span class="project-year">2026 ↗</span>
         </div>
         <div class="project-name">SoilSpaces</div>
-        <div class="project-desc">Web platform for soil &amp; land data management and analytics.</div>
-        <div class="project-tech">Full Stack · SaaS</div>
+        <div class="project-desc">Mobile app for booking SoilSpaces working spaces.</div>
+        <div class="project-tech">Mobile App</div>
       </a>
 
       <a href="https://deemples.com" target="_blank" class="project-card">
         <div class="project-top">
           <span class="logo-chip-white"><img src="deemples.png" alt="Deemples Golf"></span>
-          <span class="project-year">2023 ↗</span>
+          <span class="project-year">2024 ↗</span>
         </div>
         <div class="project-name">Deemples Golf</div>
         <div class="project-desc">Booking &amp; reservation platform for golfers across SE Asia.</div>
         <div class="project-tech">Laravel · React · AWS</div>
+      </a>
+
+      <a href="https://atabamosky.com/en/home" target="_blank" class="project-card">
+        <div class="project-top">
+          <span class="logo-chip-white"><img src="atabamosky.png" alt="Ataba &amp; Mosky"></span>
+          <span class="project-year">2024 ↗</span>
+        </div>
+        <div class="project-name">Ataba &amp; Mosky</div>
+        <div class="project-desc">E-commerce platform for Egyptian retailers with custom CMS.</div>
+        <div class="project-tech">Laravel · MySQL</div>
+      </a>
+
+      <a href="https://cybermentor.pro/" target="_blank" class="project-card">
+        <div class="project-top">
+          <span class="logo-chip-white"><img src="cybermentor.png" alt="Cyber Mentor"></span>
+          <span class="project-year">2023 ↗</span>
+        </div>
+        <div class="project-name">Cyber Mentor</div>
+        <div class="project-desc">Cybersecurity mentorship platform; led backend architecture.</div>
+        <div class="project-tech">Node.js · REST</div>
       </a>
 
       <a href="https://bit.ly/4bxcXsL" target="_blank" class="project-card">
@@ -329,19 +384,9 @@
         <div class="project-tech">Laravel · MySQL · Geo</div>
       </a>
 
-      <a href="https://cybermentor.pro/" target="_blank" class="project-card">
-        <div class="project-top">
-          <span class="logo-chip-white"><img src="cybermentor.svg" alt="Cyber Mentor"></span>
-          <span class="project-year">2023 ↗</span>
-        </div>
-        <div class="project-name">Cyber Mentor</div>
-        <div class="project-desc">Cybersecurity mentorship platform; led backend architecture.</div>
-        <div class="project-tech">Node.js · REST</div>
-      </a>
-
       <a href="https://bit.ly/4eRWz9e" target="_blank" class="project-card">
         <div class="project-top">
-          <span class="logo-initial">V</span>
+          <span class="logo-chip-white"><img src="viola.png" alt="VPH Social"></span>
           <span class="project-year">2022 ↗</span>
         </div>
         <div class="project-name">VPH Social</div>
@@ -367,16 +412,6 @@
         <div class="project-name">Freelance Yards</div>
         <div class="project-desc">Freelance marketplace with payment gateway integration.</div>
         <div class="project-tech">Laravel · Payments</div>
-      </a>
-
-      <a href="https://atabamosky.com/en/home" target="_blank" class="project-card">
-        <div class="project-top">
-          <span class="logo-chip-white"><img src="atabamosky.png" alt="Ataba &amp; Mosky"></span>
-          <span class="project-year">2020 ↗</span>
-        </div>
-        <div class="project-name">Ataba &amp; Mosky</div>
-        <div class="project-desc">E-commerce platform for Egyptian retailers with custom CMS.</div>
-        <div class="project-tech">Laravel · MySQL</div>
       </a>
 
     </div>
