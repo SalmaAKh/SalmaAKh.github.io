@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salma Khater — Senior Full Stack Developer</title>
+
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="apple-touch-icon" href="logo.svg">
+
+<meta name="description" content="Salma Khater — Senior Full Stack Developer. Laravel, Node.js and modern frontends, serving 100K+ users.">
+<meta property="og:title" content="Salma Khater — Senior Full Stack Developer">
+<meta property="og:description" content="I architect scalable backends and ship production web apps — 6 years across Laravel, Node.js and modern frontends, serving 100K+ users.">
+<meta property="og:image" content="logo.svg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="logo.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0a0b10;
+    color: #b6bccb;
+    font-family: 'Space Grotesk', sans-serif;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  a { color: #a99bff; text-decoration: none; }
+  a:hover { color: #c9c3ff; }
+
+  .glow {
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 460px;
+    background: radial-gradient(ellipse at center, rgba(139,123,255,.22), transparent 70%);
+    pointer-events: none;
+  }
+
+  .wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+  }
+
+  /* Nav */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 0;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; }
+  .brand-logo {
+    width: 26px; height: 26px; display: block;
+  }
+  .brand-name { font-weight: 700; font-size: 16px; color: #eef1f8; }
+  .nav-links { display: flex; gap: 30px; font-size: 14px; }
+  .nav-links a:first-child { color: #eef1f8; }
+  .nav-links a:not(:first-child) { color: #7d8395; }
+  .hire-btn {
+    font-size: 13px; font-weight: 600; color: #0a0b10;
+    background: #c9c3ff; padding: 10px 18px; border-radius: 8px;
+    transition: background .2s;
+  }
+  .hire-btn:hover { color: #0a0b10; background: #a99bff; }
+
+  /* Hero */
+  .hero {
+    padding: 60px 0 50px;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 48px;
+    align-items: center;
+  }
+  .badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    color: #a99bff; background: rgba(139,123,255,.1);
+    border: 1px solid rgba(139,123,255,.25);
+    padding: 6px 12px; border-radius: 20px;
+  }
+  .badge-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: #56d4dd; display: block;
+  }
+  h1 {
+    font-size: 60px; line-height: 1.04; letter-spacing: -1.5px;
+    font-weight: 700; color: #f4f6fb; margin: 22px 0 0;
+  }
+  .hero-desc {
+    font-size: 17px; line-height: 1.6; color: #8d93a5;
+    max-width: 500px; margin: 18px 0 0;
+  }
+  .hero-actions { display: flex; gap: 14px; margin-top: 30px; }
+  .btn-primary {
+    font-size: 14px; font-weight: 600; color: #0a0b10;
+    background: linear-gradient(135deg, #8b7bff, #a99bff);
+    padding: 13px 24px; border-radius: 10px;
+  }
+  .btn-secondary {
+    font-size: 14px; font-weight: 500; color: #b6bccb;
+    border: 1px solid #2a2f3e; padding: 13px 24px; border-radius: 10px;
+    transition: border-color .2s;
+  }
+  .btn-secondary:hover { border-color: #8b7bff; }
+
+  .headshot-card {
+    position: relative; border-radius: 18px; overflow: hidden;
+    border: 1px solid #262b3a; box-shadow: 0 0 60px rgba(139,123,255,.25);
+  }
+  .monogram-card {
+    height: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(ellipse at 30% 20%, rgba(139,123,255,.18), transparent 60%),
+                linear-gradient(150deg, #12101f, #0e111a 60%);
+    position: relative;
+    overflow: hidden;
+  }
+  .monogram-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(135deg, rgba(139,123,255,.06) 0 1px, transparent 1px 24px);
+  }
+  .monogram-card img {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .stats { display: flex; gap: 10px; margin-top: 14px; }
+  .stat {
+    flex: 1; text-align: center; background: #10131c;
+    border: 1px solid #1a1d27; border-radius: 10px; padding: 12px;
+  }
+  .stat-num { font-size: 24px; font-weight: 700; color: #f4f6fb; }
+  .stat-label {
+    font-size: 10px; color: #7d8395; font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Section labels */
+  .section-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #a99bff;
+    letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px;
+  }
+
+  /* Skills */
+  .skills { padding: 30px 0 10px; }
+  .skills-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+  }
+  .skill-card {
+    background: #0e111a; border: 1px solid #1a1d27; border-radius: 14px; padding: 20px;
+  }
+  .skill-card h3 {
+    font-size: 15px; font-weight: 600; color: #eef1f8; margin-bottom: 14px;
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+  .skill-tags span {
+    font-size: 12px; color: #b6bccb; background: #161a26;
+    border: 1px solid #232838; padding: 5px 10px; border-radius: 7px;
+  }
+
+  /* Projects */
+  .work { padding: 40px 0 50px; }
+  .projects-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+  }
+  .project-card {
+    background: #0e111a; border: 1px solid #1a1d27; border-radius: 14px;
+    padding: 22px; display: block; transition: border-color .2s, box-shadow .2s;
+  }
+  .project-card:hover {
+    border-color: #8b7bff; box-shadow: 0 0 30px rgba(139,123,255,.15);
+  }
+  .project-top {
+    display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;
+  }
+  .logo-chip-white {
+    height: 36px; min-width: 36px; max-width: 150px; border-radius: 8px;
+    background: #fff; display: flex; align-items: center; justify-content: center; padding: 6px 10px;
+  }
+  .logo-chip-light {
+    height: 36px; min-width: 36px; max-width: 150px;
+    display: flex; align-items: center; justify-content: flex-start;
+  }
+  .logo-chip-white img, .logo-chip-light img {
+    max-height: 30px; max-width: 140px; object-fit: contain;
+  }
+  .logo-chip-white img { max-height: 24px; max-width: 130px; }
+  .logo-initial {
+    width: 36px; height: 36px; border-radius: 9px;
+    background: linear-gradient(135deg, #8b7bff, #56d4dd);
+    display: flex; align-items: center; justify-content: center;
+    color: #0a0b10; font-weight: 700; font-size: 16px;
+  }
+  .project-year {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #7d8395;
+  }
+  .project-name { font-size: 17px; font-weight: 600; color: #f4f6fb; }
+  .project-desc { font-size: 13.5px; color: #8d93a5; line-height: 1.55; margin-top: 8px; }
+  .project-tech {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #a99bff; margin-top: 14px;
+  }
+
+  /* Contact */
+  .contact {
+    margin: 0 0 60px;
+    background: linear-gradient(135deg, #12101f, #0e111a);
+    border: 1px solid #262b3a; border-radius: 18px; padding: 44px; text-align: center;
+  }
+  .contact h2 {
+    font-size: 38px; font-weight: 700; letter-spacing: -1px; color: #f4f6fb;
+  }
+  .contact p { font-size: 15px; color: #8d93a5; margin: 12px 0 24px; }
+  .contact-actions {
+    display: inline-flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+  }
+  .contact-email {
+    font-size: 14px; font-weight: 600; color: #0a0b10;
+    background: #c9c3ff; padding: 13px 24px; border-radius: 10px;
+    transition: background .2s;
+  }
+  .contact-email:hover { color: #0a0b10; background: #a99bff; }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: repeat(2, 1fr); }
+    .projects-grid { grid-template-columns: 1fr; }
+    h1 { font-size: 42px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="glow"></div>
+
+<div class="wrap">
+
+  <!-- Nav -->
+  <nav>
+    <div class="brand">
+      <img src="logo.svg" alt="Salma Khater logo" class="brand-logo">
+      <span class="brand-name">Salma Khater</span>
+    </div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#skills">Skills</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="mailto:salmamcu@gmail.com" class="hire-btn">Hire me</a>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div>
+      <div class="badge"><span class="badge-dot"></span> Open to opportunities</div>
+      <h1>Senior Full Stack<br>Developer</h1>
+      <p class="hero-desc">I architect scalable backends and ship production web apps — 6 years across Laravel, Node.js and modern frontends, serving 100K+ users.</p>
+      <div class="hero-actions">
+        <a href="#work" class="btn-primary">View work</a>
+        <a href="#contact" class="btn-secondary">Get in touch</a>
+      </div>
+    </div>
+    <div>
+      <div class="headshot-card">
+        <div class="monogram-card"><img src="avatar-monogram.svg" alt="Salma Khater monogram"></div>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="stat-num">6+</div><div class="stat-label">YRS</div></div>
+        <div class="stat"><div class="stat-num">100K</div><div class="stat-label">USERS</div></div>
+        <div class="stat"><div class="stat-num">10+</div><div class="stat-label">PROJECTS</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="skills">
+    <div class="section-label">// stack</div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Backend</h3>
+        <div class="skill-tags">
+          <span>PHP</span><span>Laravel</span><span>Node.js</span><span>Express</span><span>REST APIs</span><span>Microservices</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Frontend</h3>
+        <div class="skill-tags">
+          <span>JavaScript</span><span>Vue.js</span><span>React</span><span>HTML5</span><span>CSS3</span><span>Bootstrap</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Databases</h3>
+        <div class="skill-tags">
+          <span>MySQL</span><span>MongoDB</span><span>SQL</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>DevOps &amp; Tools</h3>
+        <div class="skill-tags">
+          <span>Docker</span><span>Git</span><span>AWS CloudWatch</span><span>Ubuntu</span><span>ClickUp</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="work" class="work">
+    <div class="section-label">// selected work</div>
+    <div class="projects-grid">
+
+      <a href="https://ptmanagementsystem-production.up.railway.app/login" target="_blank" class="project-card">
+        <div class="project-top">
+          <span class="logo-chip-white"><img src="pentra.svg" alt="Pentra"></span>
+          <span class="project-year">2025 ↗</span>
+        </div>
+        <div class="project-name">Pentra</div>
+        <div class="project-desc">Pentest operations platform for tracking projects, assets, and vulnerabilities, with Jira and Writeups API integrations for automated reporting.</div>
+        <div class="project-tech">Full Stack · Security Ops</div>
+      </a>
+
+      <a href="https://soilspaces.com/" target="_blank" class="project-card">
+        <div class="project-top">
+          <span class="logo-chip-light"><img src="soilspaces.svg" alt="SoilSpaces"></span>
+          <span class="project-year">2026 ↗</span>
+        </div>
+        <div class="project-name">SoilSpaces</div>
+        <div class="project-desc">Mobile app for booking SoilSpaces working spaces.</div>
+        <div class="project-tech">Mobile App</div>
+      </a>
+
+      <a href="https://deemples.com" target="_blank" class="project-card">
+        <div class="project-top">
+          <span class="logo-chip-white"><img src="deemples.png" alt="Deemples Golf"></span>
+          <span class="project-year">2024 ↗</span>
+        </div>
+        <div class="project-name">Deemples Golf</div>
+        <div class="project-desc">Booking &amp; reservation platform for golfers across SE Asia.</div>
+        <div class="project-tech">Laravel · React · AWS</div>
+      </a>
+
+      <a href="https://atabamosky.com/en/home" target="_blank" class="project-card">
+        <div class="project-top">
+          <span class="logo-chip-white"><img src="atabamosky.png" alt="Ataba &amp; Mosky"></span>
+          <span class="project-year">2024 ↗</span>
+        </div>
+        <div class="project-name">Ataba &amp; Mosky</div>
+        <div class="project-desc">E-commerce platform for Egyptian retailers with custom CMS.</div>
+        <div class="project-tech">Laravel · MySQL</div>
+      </a>
+
+      <a href="https://cybermentor.pro/" target="_blank" class="project-card">
+        <div class="project-top">
+          <span class="logo-chip-white"><img src="cybermentor.png" alt="Cyber Mentor"></span>
+          <span class="project-year">2023 ↗</span>
+        </div>
+        <div class="project-name">Cyber Mentor</div>
+        <div class="project-desc">Cybersecurity mentorship platform; led backend architecture.</div>
+        <div class="project-tech">Node.js · REST</div>
+      </a>
+
+      <a href="https://bit.ly/4bxcXsL" target="_blank" class="project-card">
+        <div class="project-top">
+          <span class="logo-chip-white"><img src="libyapost.svg" alt="Libya Post"></span>
+          <span class="project-year">2022 ↗</span>
+        </div>
+        <div class="project-name">Libya Post</div>
+        <div class="project-desc">National parcel distribution &amp; tracking with QR scanning.</div>
+        <div class="project-tech">Laravel · MySQL · Geo</div>
+      </a>
+
+      <a href="https://bit.ly/4eRWz9e" target="_blank" class="project-card">
+        <div class="project-top">
+          <span class="logo-chip-white"><img src="viola.png" alt="VPH Social"></span>
+          <span class="project-year">2022 ↗</span>
+        </div>
+        <div class="project-name">VPH Social</div>
+        <div class="project-desc">Social app on microservices with modular REST APIs.</div>
+        <div class="project-tech">Node · Express · Mongo</div>
+      </a>
+
+      <a href="https://bit.ly/45Y3f1I" target="_blank" class="project-card">
+        <div class="project-top">
+          <span class="logo-chip-white"><img src="viola.png" alt="Viola CMS"></span>
+          <span class="project-year">2021 ↗</span>
+        </div>
+        <div class="project-name">Viola CMS</div>
+        <div class="project-desc">Custom CMS letting non-technical users edit sites live.</div>
+        <div class="project-tech">Laravel · Realtime</div>
+      </a>
+
+      <a href="https://freelanceyard.com/" target="_blank" class="project-card">
+        <div class="project-top">
+          <span class="logo-chip-white"><img src="freelanceyards.png" alt="Freelance Yards"></span>
+          <span class="project-year">2021 ↗</span>
+        </div>
+        <div class="project-name">Freelance Yards</div>
+        <div class="project-desc">Freelance marketplace with payment gateway integration.</div>
+        <div class="project-tech">Laravel · Payments</div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <h2>Let's build something great.</h2>
+    <p>Available for full-time, remote collaboration and freelance.</p>
+    <div class="contact-actions">
+      <a href="mailto:salmamcu@gmail.com" class="contact-email">salmamcu@gmail.com</a>
+      <a href="https://www.linkedin.com/in/salma-khater-502705128/" target="_blank" class="btn-secondary">LinkedIn ↗</a>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
