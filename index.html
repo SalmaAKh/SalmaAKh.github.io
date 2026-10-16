@@ -39,7 +39,8 @@
     top: -120px;
     left: 50%;
     transform: translateX(-50%);
-    width: 900px;
+    /* Never wider than the screen: a fixed 900px glow made phones scroll sideways. */
+    width: min(900px, 100vw);
     height: 460px;
     background: radial-gradient(ellipse at center, rgba(139,123,255,.22), transparent 70%);
     pointer-events: none;
@@ -241,6 +242,17 @@
     .skills-grid { grid-template-columns: repeat(2, 1fr); }
     .projects-grid { grid-template-columns: 1fr; }
     h1 { font-size: 42px; }
+  }
+
+  /* Phones: tighter gutters, one stack card per row, and the logo stands in
+     for the name so the links and Hire me fit on one row. */
+  @media (max-width: 600px) {
+    .wrap { padding: 0 20px; }
+    .hero { padding-top: 20px; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .brand-name { display: none; }
+    .nav-links { gap: 12px; font-size: 13px; }
+    .hire-btn { padding: 8px 12px; white-space: nowrap; }
   }
 </style>
 </head>
